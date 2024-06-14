@@ -29,6 +29,9 @@ bottonePerGiocare.addEventListener("click",
 
 
 
+randomNumbersArray(1, 100);
+
+
 
 // FUNZIONI
 
@@ -43,13 +46,13 @@ function addHtmlElementWithClass (tag, elementClass){
 }
 
 // funzione creazione girglia
-  function createGrid (min, max, contenitoreElementi){
+function createGrid (min, max, contenitoreElementi){
 
     for(let i = min; i <= max; i++){
         const divBox = addHtmlElementWithClass("div", "box");
 
         divBox.append(i);
-     
+        
         divBox.addEventListener("click",
             function(){
                 divBox.classList.add("active");
@@ -59,6 +62,29 @@ function addHtmlElementWithClass (tag, elementClass){
 
         contenitoreElementi.append(divBox);
 
-       }
-     return contenitoreElementi;
-  }
+        }
+        return contenitoreElementi;
+    }
+
+
+// funzione creazione array di numeri random tra un minimo e un massimo
+function randomNumbersArray (min, max){
+
+    const arrayNum = [];
+
+
+    while(arrayNum.length < max){
+        // creo un numero random tra un minimo e un massimo
+        let randomNum = Math.floor((Math.random() * max) + min);
+    
+        // controllo che il numero non sia già presente nell'array
+        if(!arrayNum.includes(randomNum)){
+            arrayNum.push(randomNum);
+        }
+    }
+    
+    console.log(arrayNum);
+
+    return arrayNum;
+}
+
