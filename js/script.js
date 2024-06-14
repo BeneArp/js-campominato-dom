@@ -50,6 +50,8 @@ function createGrid (min, max, contenitoreElementi){
     // creo un array con una serie di numeri random
     const bombe = randomNumbersArray(100, 1, 16);
 
+    // variabile per definire il puteggio
+    let punteggio = 0;
 
     for(let i = min; i <= max; i++){
         const divBox = addHtmlElementWithClass("div", "box");
@@ -61,9 +63,15 @@ function createGrid (min, max, contenitoreElementi){
                 divBox.classList.add("active");
                 console.log(i);
 
+                punteggio = punteggio + 1
+
                 if(bombe.includes(i)){
                     divBox.classList.add("bomb");
+
+                    punteggio = punteggio - 1;
+                    console.log(`"Il tuo punteggio è" ${punteggio}`);
                 }
+
             }
         )
 
