@@ -63,13 +63,12 @@ function createGrid (min, max, contenitoreElementi){
                 divBox.classList.add("active");
                 console.log(i);
 
-                punteggio = punteggio + 1
-
                 if(bombe.includes(i)){
                     divBox.classList.add("bomb");
+                    console.log(punteggio);
 
-                    punteggio = punteggio - 1;
-                    console.log(`"Il tuo punteggio è" ${punteggio}`);
+                }else{
+                    punteggio = punteggio + 1;
                 }
 
             }
