@@ -52,6 +52,7 @@ function createGrid (min, max, contenitoreElementi){
 
     // variabile per definire il puteggio
     let punteggio = 0;
+    const punteggioMax = 84;
 
     for(let i = min; i <= max; i++){
         const divBox = addHtmlElementWithClass("div", "box");
@@ -65,7 +66,10 @@ function createGrid (min, max, contenitoreElementi){
 
                 if(bombe.includes(i)){
                     divBox.classList.add("bomb");
-                    console.log(punteggio);
+                    console.log(`"Hai preso una bomba! Il tuo punteggio è: ${punteggio}"`);
+
+                }else if(punteggio === punteggioMax){
+                    console.log(`"Hai fatto il massimo puteggio ${punteggio}"`);
 
                 }else{
                     punteggio = punteggio + 1;
