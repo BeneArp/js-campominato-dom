@@ -61,19 +61,25 @@ function createGrid (min, max, contenitoreElementi){
 
         divBox.addEventListener("click",
             function(){
-                divBox.classList.add("active");
-                console.log(i);
 
                 if(bombe.includes(i)){
                     divBox.classList.add("bomb");
-                    console.log(`"Hai preso una bomba! Il tuo punteggio è: ${punteggio}"`);
+                    console.log(`Hai preso una bomba! Il tuo punteggio è: ${punteggio}`);
 
                 }else if(punteggio === punteggioMax){
-                    console.log(`"Hai fatto il massimo puteggio ${punteggio}"`);
+                    console.log(`Hai fatto il massimo puteggio ${punteggio}`);
+
+                }else if(divBox.classList.contains("active")){
+                    punteggio = punteggio;
 
                 }else{
                     punteggio = punteggio + 1;
                 }
+
+
+                divBox.classList.add("active");
+                console.log(i);
+
 
             }
         )
