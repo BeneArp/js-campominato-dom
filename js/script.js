@@ -10,6 +10,8 @@
 // RIFERIMENTI DAL DOM
 const bottonePerGiocare = document.getElementById("bottone-gioco");
 const containerGriglia = document.querySelector(".row");
+const outputPunteggio = document.getElementById("punteggio");
+const containerMessaggioPunteggio = document.getElementById("punteggio-finale");
 
 
 // EVENTO CLICK SUL BOTTONE PER INIZIARE LA PARTITA
@@ -62,17 +64,28 @@ function createGrid (min, max, contenitoreElementi){
         divBox.addEventListener("click",
             function(){
 
+                // controllo punteggio
+
+                // se il div è una "bomba"
                 if(bombe.includes(i)){
                     divBox.classList.add("bomb");
-                    console.log(`Hai preso una bomba! Il tuo punteggio è: ${punteggio}`);
+                    // la partita finisce e viene mostrato il punteggio
+                    outputPunteggio.innerHTML = (`Hai preso una bomba! Il tuo punteggio è: ${punteggio}`);
+                    containerMessaggioPunteggio.classList.remove("invisible")
 
+                // se si raggiunge il massimo punteggio
                 }else if(punteggio === punteggioMax){
-                    console.log(`Hai fatto il massimo puteggio ${punteggio}`);
+                    outputPunteggio.innerHTML = (`Hai fatto il massimo puteggio ${punteggio}`);
 
+                // se il div è già stato cliccato prima
                 }else if(divBox.classList.contains("active")){
+                    // il punteggio non aumenta
                     punteggio = punteggio;
+                    containerMessaggioPunteggio.classList.remove("invisible")
 
+                // se tutte le precedenti condizioni sono false
                 }else{
+                    // il punteggio aumenta di uno
                     punteggio = punteggio + 1;
                 }
 
