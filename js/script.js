@@ -55,11 +55,15 @@ function createGrid (min, max, contenitoreElementi){
         const divBox = addHtmlElementWithClass("div", "box");
 
         divBox.append(i);
-        
+
         divBox.addEventListener("click",
             function(){
                 divBox.classList.add("active");
                 console.log(i);
+
+                if(bombe.includes(i)){
+                    divBox.classList.add("bomb");
+                }
             }
         )
 

@@ -34,9 +34,6 @@ body{
     padding: 0.7em 0;
 }
 
-.bomb{
-    background-color: red;
-}
 
 /* classe per nascondere contenuto dalla pagina */
 .invisible{
@@ -47,6 +44,10 @@ body{
 .active{
     background-color: rgb(127 255 212);
     color: black;
+}
+
+.bomb{
+    background-color: red;
 }
 
 /* layout bottone */
