@@ -12,6 +12,7 @@ const bottonePerGiocare = document.getElementById("bottone-gioco");
 const containerGriglia = document.querySelector(".row");
 const outputPunteggio = document.getElementById("punteggio");
 const containerMessaggioPunteggio = document.getElementById("punteggio-finale");
+const bottoneReload = document.getElementById("reload");
 
 
 // EVENTO CLICK SUL BOTTONE PER INIZIARE LA PARTITA
@@ -71,7 +72,8 @@ function createGrid (min, max, contenitoreElementi){
                     divBox.classList.add("bomb");
                     // la partita finisce e viene mostrato il punteggio
                     outputPunteggio.innerHTML = (`Hai preso una bomba! Il tuo punteggio è: ${punteggio}`);
-                    containerMessaggioPunteggio.classList.remove("invisible")
+                    containerMessaggioPunteggio.classList.remove("invisible");
+                    bottoneReload.classList.remove("invisible");
 
                 // se si raggiunge il massimo punteggio
                 }else if(punteggio === punteggioMax){
@@ -82,6 +84,7 @@ function createGrid (min, max, contenitoreElementi){
                     // il punteggio non aumenta
                     punteggio = punteggio;
                     containerMessaggioPunteggio.classList.remove("invisible")
+                    bottoneReload.classList.remove("invisible");
 
                 // se tutte le precedenti condizioni sono false
                 }else{
@@ -89,6 +92,12 @@ function createGrid (min, max, contenitoreElementi){
                     punteggio = punteggio + 1;
                 }
 
+                // evento ricarica pagina al click
+                bottoneReload.addEventListener("click",
+                    function(){
+                        location.reload()
+                    }
+                )
 
                 divBox.classList.add("active");
                 console.log(i);
