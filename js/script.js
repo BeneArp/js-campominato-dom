@@ -24,12 +24,11 @@ bottonePerGiocare.addEventListener("click",
         bottonePerGiocare.classList.add("invisible");
         // rimuovo la classe display none dalla griglia
         containerGriglia.classList.remove("invisible");
+        
     }
 )
 
 
-
-randomNumbersArray(1, 100);
 
 
 
@@ -48,6 +47,10 @@ function addHtmlElementWithClass (tag, elementClass){
 // funzione creazione girglia
 function createGrid (min, max, contenitoreElementi){
 
+    // creo un array con una serie di numeri random
+    const bombe = randomNumbersArray(100, 1, 16);
+
+
     for(let i = min; i <= max; i++){
         const divBox = addHtmlElementWithClass("div", "box");
 
@@ -63,19 +66,20 @@ function createGrid (min, max, contenitoreElementi){
         contenitoreElementi.append(divBox);
 
         }
+
         return contenitoreElementi;
     }
 
 
 // funzione creazione array di numeri random tra un minimo e un massimo
-function randomNumbersArray (min, max){
+function randomNumbersArray (rangeNumber, min, max){
 
     const arrayNum = [];
 
 
     while(arrayNum.length < max){
         // creo un numero random tra un minimo e un massimo
-        let randomNum = Math.floor((Math.random() * max) + min);
+        let randomNum = Math.floor((Math.random() * rangeNumber) + min);
     
         // controllo che il numero non sia già presente nell'array
         if(!arrayNum.includes(randomNum)){

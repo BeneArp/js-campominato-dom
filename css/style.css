@@ -34,6 +34,10 @@ body{
     padding: 0.7em 0;
 }
 
+.bomb{
+    background-color: red;
+}
+
 /* classe per nascondere contenuto dalla pagina */
 .invisible{
     display: none;
