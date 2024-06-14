@@ -1,0 +1,57 @@
+/* azzeramento parametri */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* generali */
+body{
+    background-color: rgb(1 22 39);
+    text-align: center;
+}
+
+/* main */
+.container{
+    width: 900px;
+    height: 900px;
+    margin: 15em auto;
+    border: 3px solid white;
+}
+
+/* classe per display flex */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* classe generica div */
+.box{
+    width: 10%;
+    border: 4px solid white;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding: 0.7em 0;
+}
+
+/* classe per nascondere contenuto dalla pagina */
+.invisible{
+    display: none;
+}
+
+/* classe div cliccato */
+.active{
+    background-color: rgb(127 255 212);
+    color: black;
+}
+
+/* layout bottone */
+#bottone-gioco{
+    margin: 17em 0;
+    font-size: 35px;
+    padding: 1em 2em;
+    border-radius: 15px;
+    font-weight: bold;
+    color: rgb(1 22 39);
+    background-color: rgb(127 255 212);
+}
